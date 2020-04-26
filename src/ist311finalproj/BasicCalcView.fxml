@@ -17,6 +17,7 @@
             <Button mnemonicParsing="false" onAction="#operateButton" prefHeight="50.0" prefWidth="100.0" styleClass="Button" text="Sin(rad)" />
          </children>
       </HBox>
+      <Button fx:id="goBackHome" mnemonicParsing="false" onAction="#goBack" prefHeight="40.0" prefWidth="100.0" text="Go Back" />
       <HBox layoutY="80.0" prefHeight="50.0" prefWidth="500.0" style="-fx-background-color: black;" AnchorPane.topAnchor="80.0">
          <children>
             <Button mnemonicParsing="false" onAction="#operateButton" prefHeight="40.0" prefWidth="100.0" styleClass="Button" text="4" />
@@ -45,6 +46,5 @@
          </children>
       </HBox>
       <Button layoutY="200.0" mnemonicParsing="false" onAction="#operateButton" onInputMethodTextChanged="#operateButton" prefHeight="40.0" prefWidth="500.0" styleClass="Clear" text="C" />
-      <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Go Back" />
    </children>
 </AnchorPane>
