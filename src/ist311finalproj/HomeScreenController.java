@@ -67,8 +67,31 @@ public class HomeScreenController {
     }
 
     @FXML
-    void clickGPAButton(ActionEvent event) {
+    void clickGPAButton(ActionEvent event) throws IOException {
+        FXMLLoader loader3 = new FXMLLoader(getClass().getResource("GPACalcView.fxml"));
 
+        // load the ui elements
+        Parent gpaCalcView = loader3.load();
+        // load the scene
+        Scene gpaCalcScene = new Scene(gpaCalcView);
+
+        //access the controller and call a method
+        GPACalcController controller = loader3.getController();
+
+        // pass currently selected model
+//        controller.initData(modelTable.getSelectionModel().getSelectedItem());
+        // create a new state
+//        Stage stage = new Stage();
+//        stage.setScene(tableViewScene);
+//        stage.show();
+        // pass current scene to return
+        controller.setPreviousScene(((Node) event.getSource()).getScene());
+
+        //This line gets the Stage information
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        window.setScene(gpaCalcScene);
+        window.show();
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete

@@ -44,7 +44,7 @@ public final class BasicCalcController {
 
     @FXML
     public void goBack(ActionEvent event) {
-        System.out.println("it works");
+        //System.out.println("it works");
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 //        //Stage stage = (Stage)backButton.getScene().getWindow();
         if (null != previousScene){
