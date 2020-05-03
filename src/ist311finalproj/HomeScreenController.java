@@ -62,8 +62,25 @@ public class HomeScreenController {
     }
 
     @FXML
-    void clickFinanceButton(ActionEvent event) {
-
+    void clickFinanceButton(ActionEvent event) throws IOException {
+        FXMLLoader loader2 = new FXMLLoader(getClass().getResource("FinanceCalcView.fxml"));
+      
+        // load the ui elements
+        Parent financeCalcView = loader2.load();
+        
+        // load the scene
+        Scene financeCalcScene = new Scene(financeCalcView);
+        
+        //access the controller and call a method
+        FinanceCalcController controller = loader2.getController();
+        
+        // pass current scene to return
+        controller.setPreviousScene(((Node) event.getSource()).getScene());
+        
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        
+        window.setScene(financeCalcScene);
+        window.show();
     }
 
     @FXML
